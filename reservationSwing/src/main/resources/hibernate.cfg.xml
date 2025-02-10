@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Połączenie z bazą danych -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property> <!-- Klasa sterownika JDBC dla MySQL -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/restaurant_swing</property> <!-- URL do bazy danych -->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.conncetion.password"></property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+
+        <!-- Tworzenie/aktualizowanie schematu -->
+        <property name="hibernate.hbm2ddl.auto">update</property> <!-- Automatyczna aktualizacja schematu bazy danych -->
+
+        <!-- Logowanie zapytań SQL -->
+        <property name="hibernate.show_sql">true</property> <!-- Włączenie pokazywania generowanego SQL w konsoli -->
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Mapowanie klasy encji -->
+        <mapping class="com.example.hibernate.Reservation" />
+    </session-factory>
+</hibernate-configuration>
